@@ -1,0 +1,331 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "lib/Nexus",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						6,
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.Nexus-Debug-62ba4d214e5dac5b4348.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "lib/Nexus",
+					"targetIndexes" : 
+					[
+						0,
+						2
+					]
+				},
+				{
+					"build" : "lib/Nexus/vendor/glad",
+					"jsonFile" : "directory-lib.Nexus.vendor.glad-Debug-7e093683331c1947495b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "lib/Nexus/vendor/glad",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "lib/Nexus/vendor/glfw",
+					"childIndexes" : 
+					[
+						4,
+						5
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.Nexus.vendor.glfw-Debug-dd05d6ad5546082d4102.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "lib/Nexus/vendor/glfw",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "lib/Nexus/vendor/glfw/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.Nexus.vendor.glfw.src-Debug-d1b0f8cb690e81bf1c7b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "lib/Nexus/vendor/glfw/src",
+					"targetIndexes" : 
+					[
+						4,
+						8
+					]
+				},
+				{
+					"build" : "lib/Nexus/vendor/glfw/docs",
+					"jsonFile" : "directory-lib.Nexus.vendor.glfw.docs-Debug-222083251b374136a251.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "lib/Nexus/vendor/glfw/docs"
+				},
+				{
+					"build" : "lib/Nexus/vendor/glm",
+					"childIndexes" : 
+					[
+						7
+					],
+					"jsonFile" : "directory-lib.Nexus.vendor.glm-Debug-bf966979efe7ecd3cabf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "lib/Nexus/vendor/glm"
+				},
+				{
+					"build" : "lib/Nexus/vendor/glm/glm",
+					"jsonFile" : "directory-lib.Nexus.vendor.glm.glm-Debug-b2a147ff0df78fe9d319.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 4,
+					"source" : "lib/Nexus/vendor/glm/glm",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "lib/Nexus/vendor/spdlog",
+					"jsonFile" : "directory-lib.Nexus.vendor.spdlog-Debug-0db065da2da4141cf75e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "lib/Nexus/vendor/spdlog",
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Kinect",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Nexus",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "glad",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4,
+						5
+					],
+					"name" : "GLFW",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6,
+						7
+					],
+					"name" : "glm",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "spdlog",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "ImGui::@aeba5a8dbd76c2c7ac42",
+					"jsonFile" : "target-ImGui-Debug-8ae2f5c27aacb7e7487c.json",
+					"name" : "ImGui",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Kinect::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Kinect-Debug-40bcea2b574ff385ea06.json",
+					"name" : "Kinect",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Nexus::@aeba5a8dbd76c2c7ac42",
+					"jsonFile" : "target-Nexus-Debug-b107b9ef149e6610d02b.json",
+					"name" : "Nexus",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glad::@30abe19dd7e61a93ba2d",
+					"jsonFile" : "target-glad-Debug-872117f6bf7e5208b926.json",
+					"name" : "glad",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfw::@3efe12dfbe8b472833c1",
+					"jsonFile" : "target-glfw-Debug-8d316cbb1cd57c699249.json",
+					"name" : "glfw",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "glm::@2aeac7e6e8a02ce62f52",
+					"jsonFile" : "target-glm-Debug-a86837e31a437633a549.json",
+					"name" : "glm",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "spdlog::@c9aab0e5011dc4c5733c",
+					"jsonFile" : "target-spdlog-Debug-acdf5fa201d697fb7fa5.json",
+					"name" : "spdlog",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "uninstall::@f4444012d0c2c0044027",
+					"jsonFile" : "target-uninstall-Debug-cc413065e943131c30a7.json",
+					"name" : "uninstall",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "update_mappings::@3efe12dfbe8b472833c1",
+					"jsonFile" : "target-update_mappings-Debug-dc1e02183c5787c58bb7.json",
+					"name" : "update_mappings",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/build",
+		"source" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

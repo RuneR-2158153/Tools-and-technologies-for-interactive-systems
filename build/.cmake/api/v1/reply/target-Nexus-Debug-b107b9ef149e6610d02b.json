@@ -1,0 +1,354 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/Nexus/libNexus.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"lib/Nexus/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 30,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 64,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 38,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 67,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++23 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 6,
+					"define" : "SPDLOG_COMPILED_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/lib/Nexus/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/lib/Nexus/vendor/glad/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/lib/Nexus/vendor/glfw/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/lib/Nexus/vendor/glm"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/lib/Nexus/vendor"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/lib/Nexus/vendor/ImGui"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/Users/kobe/Documents/School/2024-2025/Tools_and_Technologies_for_Interactive_Systems/project/lib/Nexus/vendor/spdlog/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "23"
+			},
+			"sourceIndexes" : 
+			[
+				6,
+				7,
+				8,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "ImGui::@aeba5a8dbd76c2c7ac42"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::@30abe19dd7e61a93ba2d"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "glfw::@3efe12dfbe8b472833c1"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "glm::@2aeac7e6e8a02ce62f52"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "spdlog::@c9aab0e5011dc4c5733c"
+		}
+	],
+	"id" : "Nexus::@aeba5a8dbd76c2c7ac42",
+	"name" : "Nexus",
+	"nameOnDisk" : "libNexus.a",
+	"paths" : 
+	{
+		"build" : "lib/Nexus",
+		"source" : "lib/Nexus"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				6,
+				7,
+				8,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "lib/Nexus/include/Nexus.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "lib/Nexus/include/Nexus/Core/PlatformDetection.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "lib/Nexus/include/Nexus/Event.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "lib/Nexus/include/Nexus/Log.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "lib/Nexus/include/Nexus/Window.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "lib/Nexus/include/Nexus/Window/GLFWWindow.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/src/Log.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/src/Platform/Multi/GLFWWindow.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/src/Window.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/imconfig.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/imgui.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/imgui_internal.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/imstb_rectpack.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/imstb_textedit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/imstb_truetype.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/backends/imgui_impl_glfw.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "lib/Nexus/vendor/ImGui/backends/imgui_impl_opengl3.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/imgui.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/imgui_demo.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/imgui_draw.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/imgui_tables.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/imgui_widgets.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/backends/imgui_impl_glfw.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/backends/imgui_impl_opengl3.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "lib/Nexus/vendor/ImGui/misc/cpp/imgui_stdlib.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}
