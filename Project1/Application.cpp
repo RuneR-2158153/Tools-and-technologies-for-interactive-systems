@@ -215,8 +215,8 @@ void Application::Update()
             }
 
             // render game
-            //game.update(m_p1Pos, m_p2Pos, m_pRenderTarget);
-            ProcessSkeleton(skeletonFrame); // draw skeleton from kinect
+            game.update(m_p1Pos, m_p2Pos, m_pRenderTarget);
+            //ProcessSkeleton(skeletonFrame); // draw skeleton from kinect
         }
     }
 }

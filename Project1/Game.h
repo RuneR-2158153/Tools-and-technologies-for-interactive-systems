@@ -20,12 +20,12 @@ private:
 	short m_scoreP1 = 0;
 	short m_scoreP2 = 0;
 
-	glm::vec2 m_p1Pos;
-	glm::vec2 m_p2Pos;
+	glm::vec2 m_p1Pos = { m_windowHeight / 2, m_windowWidth / 100};
+	glm::vec2 m_p2Pos = { m_windowHeight / 2, m_windowWidth - m_windowWidth / 100 };
 	
 	std::vector<glm::vec2> m_balls;
 	std::vector<glm::vec2> m_ballDirs;
-	const int m_ballSize = 80;
+	const int m_ballSize = 5;
 
 	ID2D1HwndRenderTarget* m_renderTarget;
 	ID2D1SolidColorBrush* m_brushPaddel;
