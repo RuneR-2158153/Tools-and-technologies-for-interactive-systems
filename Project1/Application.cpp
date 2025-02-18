@@ -8,6 +8,7 @@
 #include <strsafe.h>
 #include "Application.h"
 #include "resource.h"
+#include "Poses.h"
 
 static const float g_JointThickness = 3.0f;
 static const float g_TrackedBoneThickness = 6.0f;
@@ -152,8 +153,52 @@ void Application::Update()
             {
                 return;
             }
+
+            // request next skeleton data
+            NUI_SKELETON_FRAME skeletonFrame = { 0 };
+
+            hr = m_pNuiSensor->NuiSkeletonGetNextFrame(0, &skeletonFrame);
+            if (FAILED(hr))
+            {
+                return;
+            }
+
+            // smooth out the skeleton data
+            m_pNuiSensor->NuiTransformSmooth(&skeletonFrame, NULL);
+
+            // check for poses
+            std::vector<SkeletalPoses> detectedPoses = Poses::detectPoses(skeletonFrame);
+
+            // update game depending on pose
+            if (detectedPoses[0] == SkeletalPoses::UNKNOWN) {
+                
+            }
+            else if (detectedPoses[0] == SkeletalPoses::T_POSE) {
+                game.spawnBallP1();
+            }
+            else if (detectedPoses[0] == SkeletalPoses::ARMS_DOWN) {
+                game.shrinkPeddelP1();
+            }
+            else if (detectedPoses[0] == SkeletalPoses::ARMS_UP) {
+                game.enlargePeddelP1();
+            }
+
+            if (detectedPoses[1] == SkeletalPoses::UNKNOWN) {
+
+            }
+            else if (detectedPoses[1] == SkeletalPoses::T_POSE) {
+                game.spawnBallP2();
+            }
+            else if (detectedPoses[1] == SkeletalPoses::ARMS_DOWN) {
+                game.shrinkPeddelP2();
+            }
+            else if (detectedPoses[1] == SkeletalPoses::ARMS_UP) {
+                game.enlargePeddelP2();
+            }
+
+            // render game
             game.update(glm::vec2(), glm::vec2(), m_pRenderTarget);
-            //ProcessSkeleton(); // draw skeleton from kinect
+            ProcessSkeleton(); // draw skeleton from kinect
         }
     }
 }
@@ -298,7 +343,7 @@ void Application::ProcessSkeleton()
     int width = rct.right;
     int height = rct.bottom;
 
-    for (int i = 0 ; i < NUI_SKELETON_COUNT; ++i)
+    for (int i = 0 ; i < 1; ++i)
     {
         NUI_SKELETON_TRACKING_STATE trackingState = skeletonFrame.SkeletonData[i].eTrackingState;
 
