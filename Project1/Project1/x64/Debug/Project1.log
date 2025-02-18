@@ -1,0 +1,197 @@
+﻿  Application.cpp
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         ]
+  (compiling source file 'Application.cpp')
+  
+  Game.cpp
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Game.cpp(50,3): warning C4244: 'argument': conversion from 'const int' to 'FLOAT', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Game.cpp(49,3): warning C4244: 'argument': conversion from 'const int' to 'FLOAT', possible loss of data
+  PartialCalibration.cpp
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         ]
+  (compiling source file 'PartialCalibration.cpp')
+  
+  main.cpp
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(46,35): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(47,23): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(48,23): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(49,23): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(50,35): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(51,23): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(52,23): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(53,23): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         with
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         [
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:             T=float
+C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\Utils.h(54,35): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+  Generating Code...
+  Project1.vcxproj -> C:\Mac\Home\Documents\School\2024-2025\Tools_and_Technologies_for_Interactive_Systems\project\Project1\x64\Debug\Project1.exe
