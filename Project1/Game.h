@@ -38,7 +38,8 @@ private:
 	void shrinkPeddelP2();
 	
 	// render targets
-	void drawPeddel(glm::vec2 p1);
+	void drawPeddelP1(glm::vec2 p1);
+	void drawPeddelP2(glm::vec2 p2);
 	void drawBalls();
 
 public:

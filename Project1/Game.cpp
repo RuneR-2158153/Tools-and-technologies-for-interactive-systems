@@ -12,6 +12,20 @@ void Game::setRenderTarget(ID2D1HwndRenderTarget* renderTarget) {
 	m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green, 1.0f), &m_brushBall);
 }
 
+
+void Game::updateBallPositions() {
+	for (int i = 0; i < m_balls.size(); i++) {
+		m_balls[i].x += m_ballDirs[i].x;
+		m_balls[i].y += m_ballDirs[i].y;
+		if (m_balls[i].x < 0 || m_balls[i].x > m_windowWidth) {
+			m_ballDirs[i].x *= -1;
+		}
+		if (m_balls[i].y < 0 || m_balls[i].y > m_windowHeight) {
+			m_ballDirs[i].y *= -1;
+		}
+	}
+}
+
 void Game::enlargePeddelP1() {
 	if (m_p1Size != m_windowHeight) {
 		m_p1Size += 1;
@@ -76,15 +90,12 @@ void Game::update(glm::vec2 p1, glm::vec2 p2, ID2D1HwndRenderTarget* renderTarge
 	m_renderTarget->BeginDraw();
 	m_renderTarget->Clear();
 
+	updateBallPositions();
+
 	drawPeddelP1(p1);
 	drawPeddelP2(p2);
 	drawBalls();
 
-	D2D1_ELLIPSE ellipse = D2D1::Ellipse(
-		D2D1::Point2F(100.0f, 200.0f),
-		m_ballSize,
-		m_ballSize
-	);
 
 	HRESULT hr = m_renderTarget->EndDraw();
 }
