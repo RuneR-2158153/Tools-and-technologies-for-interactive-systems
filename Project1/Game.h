@@ -19,6 +19,9 @@ private:
 	
 	short m_scoreP1 = 0;
 	short m_scoreP2 = 0;
+
+	glm::vec2 m_p1Pos;
+	glm::vec2 m_p2Pos;
 	
 	std::vector<glm::vec2> m_balls;
 	std::vector<glm::vec2> m_ballDirs;
@@ -30,8 +33,10 @@ private:
 
 	// update ball position
 	void updateBallPositions();
+	void checkCollisions();
 	
 	// render targets
+	void draw();
 	void drawPeddelP1(glm::vec2 p1);
 	void drawPeddelP2(glm::vec2 p2);
 	void drawBalls();
