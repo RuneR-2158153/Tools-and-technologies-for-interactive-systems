@@ -71,6 +71,14 @@ void Game::drawBalls() {
 
 }
 
+void Game::spawnBallP1() {
+
+}
+
+void Game::spawnBallP2() {
+
+}
+
 void Game::update(glm::vec2 p1, glm::vec2 p2, ID2D1HwndRenderTarget* renderTarget) {
 	setRenderTarget(renderTarget);
 	m_renderTarget->BeginDraw();

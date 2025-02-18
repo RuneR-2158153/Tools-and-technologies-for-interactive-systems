@@ -30,12 +30,6 @@ private:
 
 	// update ball position
 	void updateBallPositions();
-
-	// peddel controls
-	void enlargePeddelP1();
-	void enlargePeddelP2();
-	void shrinkPeddelP1();
-	void shrinkPeddelP2();
 	
 	// render targets
 	void drawPeddel(glm::vec2 p1);
@@ -50,4 +44,14 @@ public:
 	// update the render 
 	// p1 and p2 are screen positions of player one and player two
 	void update(glm::vec2 p1, glm::vec2 p2, ID2D1HwndRenderTarget* renderTarget);
+
+	// spawn balls
+	void spawnBallP1();
+	void spawnBallP2();
+
+	// peddel controls
+	void enlargePeddelP1();
+	void enlargePeddelP2();
+	void shrinkPeddelP1();
+	void shrinkPeddelP2();
 };
