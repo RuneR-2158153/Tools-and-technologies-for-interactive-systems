@@ -161,39 +161,44 @@ void Application::Update()
             m_calibrated = true;
         }
         if (m_calibratingPoints == 4 && m_calibrated || true) {
-            HRESULT hr = EnsureDirect2DResources();
-            if (FAILED(hr))
-            {
-                return;
-            }
-
             // request next skeleton data
             NUI_SKELETON_FRAME skeletonFrame = { 0 };
 
-            hr = m_pNuiSensor->NuiSkeletonGetNextFrame(0, &skeletonFrame);
+            HRESULT hr = m_pNuiSensor->NuiSkeletonGetNextFrame(0, &skeletonFrame);
             if (FAILED(hr))
             {
+                std::cout << "failed to get skeletal data" << std::endl;
                 return;
             }
 
             // smooth out the skeleton data
             m_pNuiSensor->NuiTransformSmooth(&skeletonFrame, NULL);
 
+            hr = EnsureDirect2DResources();
+            if (FAILED(hr))
+            {
+                std::cout << "direct2D failed" << std::endl;
+                return;
+            }
+
             // check for poses
             std::vector<SkeletalPoses> detectedPoses = Poses::detectPoses(skeletonFrame);
 
             // update game depending on pose
             if (detectedPoses[0] == SkeletalPoses::UNKNOWN) {
-                
+                std::cout << "unknown" << std::endl;
             }
             else if (detectedPoses[0] == SkeletalPoses::T_POSE) {
                 game.spawnBallP1();
+                std::cout << "Tpose" << std::endl;
             }
             else if (detectedPoses[0] == SkeletalPoses::ARMS_DOWN) {
                 game.shrinkPeddelP1();
+                std::cout << "arms down" << std::endl;
             }
             else if (detectedPoses[0] == SkeletalPoses::ARMS_UP) {
                 game.enlargePeddelP1();
+                std::cout << "arms up" << std::endl;
             }
 
             if (detectedPoses[1] == SkeletalPoses::UNKNOWN) {
@@ -210,8 +215,8 @@ void Application::Update()
             }
 
             // render game
-            game.update(m_p1Pos, m_p2Pos, m_pRenderTarget);
-            ProcessSkeleton(); // draw skeleton from kinect
+            //game.update(m_p1Pos, m_p2Pos, m_pRenderTarget);
+            ProcessSkeleton(skeletonFrame); // draw skeleton from kinect
         }
     }
 }
@@ -328,9 +333,9 @@ HRESULT Application::CreateFirstConnected()
     return hr;
 }
 
-void Application::ProcessSkeleton()
+void Application::ProcessSkeleton(NUI_SKELETON_FRAME skeletonFrame)
 {
-    NUI_SKELETON_FRAME skeletonFrame = {0};
+    /*NUI_SKELETON_FRAME skeletonFrame = {0};
 
     HRESULT hr = m_pNuiSensor->NuiSkeletonGetNextFrame(0, &skeletonFrame);
     if ( FAILED(hr) )
@@ -339,14 +344,14 @@ void Application::ProcessSkeleton()
     }
 
     // smooth out the skeleton data
-    m_pNuiSensor->NuiTransformSmooth(&skeletonFrame, NULL);
+    m_pNuiSensor->NuiTransformSmooth(&skeletonFrame, NULL);*/
 
     // Endure Direct2D is ready to draw
-    hr = EnsureDirect2DResources( );
+    /*hr = EnsureDirect2DResources();
     if ( FAILED(hr) )
     {
         return;
-    }
+    }*/
 
     m_pRenderTarget->BeginDraw();
     m_pRenderTarget->Clear( );
@@ -356,7 +361,7 @@ void Application::ProcessSkeleton()
     int width = rct.right;
     int height = rct.bottom;
 
-    for (int i = 0 ; i < 1; ++i)
+    for (int i = 0 ; i < NUI_SKELETON_COUNT; ++i)
     {
         NUI_SKELETON_TRACKING_STATE trackingState = skeletonFrame.SkeletonData[i].eTrackingState;
 
@@ -378,7 +383,7 @@ void Application::ProcessSkeleton()
         }
     }
 
-    hr = m_pRenderTarget->EndDraw();
+    HRESULT     hr = m_pRenderTarget->EndDraw();
 
     // Device lost, need to recreate the render target
     // We'll dispose it now and retry drawing

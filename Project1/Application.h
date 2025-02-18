@@ -58,7 +58,7 @@ private:
     HRESULT                 EnsureDirect2DResources();
 
     void                    Update();
-    void                    ProcessSkeleton();
+    void                    ProcessSkeleton(NUI_SKELETON_FRAME skeletonFrame);
     void                    DiscardDirect2DResources();
     void                    DrawBone(const NUI_SKELETON_DATA& skel, NUI_SKELETON_POSITION_INDEX bone0, NUI_SKELETON_POSITION_INDEX bone1);
     void                    DrawSkeleton(const NUI_SKELETON_DATA& skel, int windowWidth, int windowHeight);
