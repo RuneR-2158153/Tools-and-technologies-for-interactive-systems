@@ -48,6 +48,10 @@ private:
     
     HANDLE                  m_pSkeletonStreamHandle;
     HANDLE                  m_hNextSkeletonEvent;
+
+    // Temporary
+    glm::vec2               m_p1Pos;
+	glm::vec2 		        m_p2Pos;
     
     
     HRESULT                 CreateFirstConnected();

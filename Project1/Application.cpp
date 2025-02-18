@@ -143,6 +143,19 @@ void Application::Update()
                 }
             }
         } 
+         
+		if (GetAsyncKeyState('W') & 0x8000) 
+			m_p1Pos.y -= 1;
+		
+		if (GetAsyncKeyState('S') & 0x8000) 
+			m_p1Pos.y += 1;
+		
+		if (GetAsyncKeyState(VK_UP) & 0x8000)
+			m_p2Pos.y -= 1;
+		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+			m_p2Pos.y += 1;
+
+
         if (m_calibratingPoints == 4 && !m_calibrated) {
             m_calibration.calibrate();
             m_calibrated = true;
@@ -197,7 +210,7 @@ void Application::Update()
             }
 
             // render game
-            game.update(glm::vec2(), glm::vec2(), m_pRenderTarget);
+            game.update(m_p1Pos, m_p2Pos, m_pRenderTarget);
             ProcessSkeleton(); // draw skeleton from kinect
         }
     }

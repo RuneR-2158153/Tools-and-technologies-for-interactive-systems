@@ -69,7 +69,7 @@ void Game::drawPeddelP2(glm::vec2 p2) {
 		p2.y + m_p2Size / 2
 	);
 
-	m_renderTarget->FillRoundedRectangle(rect, m_brushPaddel);
+	m_renderTarget->FillRectangle(rect, m_brushPaddel);
 }
 
 void Game::drawBalls() {
