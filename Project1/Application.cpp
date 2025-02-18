@@ -197,7 +197,7 @@ void Application::Update()
             }
 
             if (detectedPoses[1] == SkeletalPoses::UNKNOWN) {
-
+                 
             }
             else if (detectedPoses[1] == SkeletalPoses::T_POSE) {
                 game.spawnBallP2();
