@@ -151,11 +151,16 @@ namespace Poses {
 			return false;
 		}
 
+		// check if arm depths are more or less equal
+		float depthThreshold = 0.1f;
+		bool left = (leftShoulder.z < leftWrist.z + depthThreshold) && (leftShoulder.z > leftWrist.z - depthThreshold);
+		bool right = (rightShoulder.z < rightWrist.z + depthThreshold) && (rightShoulder.z > rightWrist.z - depthThreshold);
+
 		float verticalThreshold = 0.1f;
 		bool leftArmT = leftWrist.y < leftShoulder.y + verticalThreshold && leftWrist.y > leftShoulder.y - verticalThreshold;
 		bool rightArmT = rightWrist.y < rightShoulder.y + verticalThreshold && rightWrist.y > rightShoulder.y - verticalThreshold;
 
-		return leftArmT && rightArmT;
+		return leftArmT && rightArmT && left && right;
 	}
 
 	inline SkeletalPoses detectPose(NUI_SKELETON_DATA skeletonFrame) {
@@ -164,7 +169,6 @@ namespace Poses {
 		{
 			skeletalPoints[i] = skeletonFrame.SkeletonPositions[i];
 		}
-		skeletalPoints[NUI_SKELETON_POSITION_SHOULDER_LEFT];
 
 		if (isArmsUp(skeletonFrame, skeletalPoints)) {
 			return SkeletalPoses::ARMS_UP;

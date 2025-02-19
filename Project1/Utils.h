@@ -43,15 +43,15 @@ namespace Utils
 		double fZSin = axis.z * fSin;
 
 		glm::mat3 result = glm::mat3();
-		result[1][1] = fX2 * (1 - fCos) + fCos;
-		result[1][2] = fXYM - fZSin;
-		result[1][3] = fXZM + fYSin;
-		result[2][1] = fXYM + fZSin;
-		result[2][2] = fY2 * (1 - fCos) + fCos;
-		result[2][3] = fYZM - fXSin;
-		result[3][1] = fXZM - fYSin;
-		result[3][2] = fYZM + fXSin;
-		result[3][3] = fZ2 * (1 - fCos) + fCos;
+		result[0][0] = fX2 * (1 - fCos) + fCos;
+		result[0][1] = fXYM - fZSin;
+		result[0][2] = fXZM + fYSin;
+		result[1][0] = fXYM + fZSin;
+		result[1][1] = fY2 * (1 - fCos) + fCos;
+		result[1][2] = fYZM - fXSin;
+		result[2][0] = fXZM - fYSin;
+		result[2][1] = fYZM + fXSin;
+		result[2][2] = fZ2 * (1 - fCos) + fCos;
 		return result;
 	}
 

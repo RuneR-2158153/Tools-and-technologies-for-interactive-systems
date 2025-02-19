@@ -12,34 +12,32 @@ private:
 	const int m_windowHeight = 1080;
 	const int m_windowWidth = 1920;
 
-	const int m_paddelWidth = 40;
+	const int m_brushWidth = 40;
 	
-	int m_p1Size = 40;
-	int m_p2Size = 40;
-	
-	short m_scoreP1 = 0;
-	short m_scoreP2 = 0;
+	int m_brushSize = 40;
 
-	glm::vec2 m_p1Pos = { m_windowHeight / 2, m_windowWidth / 100};
-	glm::vec2 m_p2Pos = { m_windowHeight / 2, m_windowWidth - m_windowWidth / 100 };
+	bool m_draw = false;
+
+	static const size_t m_colorCount = 5;
+
+	const D2D1::ColorF m_colors[m_colorCount] = { D2D1::ColorF::White, D2D1::ColorF::Green, D2D1::ColorF::Red, D2D1::ColorF::Blue, D2D1::ColorF::Yellow };
+
+	size_t m_currentCollor = 0;
+
+	glm::vec2 m_pos = { m_windowHeight / 2, m_windowWidth / 100};
 	
-	std::vector<glm::vec2> m_balls;
-	std::vector<glm::vec2> m_ballDirs;
-	const int m_ballSize = 5;
+	std::vector<glm::vec2> m_points;
+	std::vector<D2D1::ColorF> m_pointColors;
 
 	ID2D1HwndRenderTarget* m_renderTarget;
 	ID2D1SolidColorBrush* m_brushPaddel;
 	ID2D1SolidColorBrush* m_brushBall;
-
-	// update ball position
-	void updateBallPositions();
-	void checkCollisions();
 	
+	void spawnPoint();
 	// render targets
 	void draw();
-	void drawPeddelP1(glm::vec2 p1);
-	void drawPeddelP2(glm::vec2 p2);
-	void drawBalls();
+	void drawBrush(glm::vec2 pos);
+	void drawPoints();
 
 public:
 	Game() = default;
@@ -49,15 +47,11 @@ public:
 
 	// update the render 
 	// p1 and p2 are screen positions of player one and player two
-	void update(glm::vec2 p1, glm::vec2 p2, ID2D1HwndRenderTarget* renderTarget);
+	void update(glm::vec2 pos, ID2D1HwndRenderTarget* renderTarget);
 
 	// spawn balls
-	void spawnBallP1();
-	void spawnBallP2();
 
 	// peddel controls
-	void enlargePeddelP1();
-	void enlargePeddelP2();
-	void shrinkPeddelP1();
-	void shrinkPeddelP2();
+	void toggleDraw();
+	void nextColor();
 };

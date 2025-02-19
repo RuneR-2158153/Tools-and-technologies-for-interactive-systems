@@ -5,138 +5,68 @@ Game::~Game() {
 	m_brushBall->Release();
 }
 
-
 void Game::setRenderTarget(ID2D1HwndRenderTarget* renderTarget) {
 	m_renderTarget = renderTarget;
 	m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::White, 1.0f), &m_brushPaddel);
 	m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green, 1.0f), &m_brushBall);
 }
 
-
-void Game::updateBallPositions() {
-	for (int i = 0; i < m_balls.size(); i++) {
-		m_balls[i].x += m_ballDirs[i].x;
-		m_balls[i].y += m_ballDirs[i].y;
-		if (m_balls[i].x < 0 || m_balls[i].x > m_windowWidth) {
-			m_ballDirs[i].x *= -1;
-		}
-		if (m_balls[i].y < 0 || m_balls[i].y > m_windowHeight) {
-			m_ballDirs[i].y *= -1;
-		}
-		checkCollisions();;
-	}
+void Game::toggleDraw() {
+	m_draw = !m_draw;
 }
 
-void Game::checkCollisions() {
-	for (int i = 0; i < m_balls.size(); i++) {
-		// Win state
-		if (m_balls[i].x - m_ballSize < 0) {
-			m_scoreP2++;
-			m_balls.erase(m_balls.begin() + i);
-			m_ballDirs.erase(m_ballDirs.begin() + i);
-		}
-		if (m_balls[i].x + m_ballSize > m_windowWidth) {
-			m_scoreP1++;
-			m_balls.erase(m_balls.begin() + i);
-			m_ballDirs.erase(m_ballDirs.begin() + i);
-		}
-
-		// Collision with paddles
-		if (m_balls[i].x - m_ballSize < m_paddelWidth / 2.0f) {
-			if (m_balls[i].y > m_p1Pos.y - m_p1Size / 2.0f && m_balls[i].y < m_p1Pos.y + m_p1Size / 2.0f) {
-				m_ballDirs[i].x *= -1;
-			}
-			if (m_balls[i].y > m_p2Pos.y - m_p2Size / 2.0f && m_balls[i].y < m_p2Pos.y + m_p2Size / 2.0f) {
-				m_ballDirs[i].x *= -1;
-			}
-		}
-	}
+void Game::nextColor() {
+	m_currentCollor = (m_currentCollor + 1) % m_colorCount;
 }
 
-void Game::enlargePeddelP1() {
-	if (m_p1Size != m_windowHeight) {
-		m_p1Size += 1;
-	}
-}
-
-void Game::enlargePeddelP2() {
-	if (m_p2Size != m_windowHeight) {
-		m_p2Size += 1;
-	}
-}
-
-void Game::shrinkPeddelP1() {
-	if (m_p1Size != 0) {
-		m_p1Size -= 1;
-	}
-}
-
-void Game::shrinkPeddelP2() {
-	if (m_p2Size != 0) {
-		m_p2Size -= 1;
-	}
-}
 
 void Game::draw() {
-	drawPeddelP1(m_p1Pos);
-	drawPeddelP2(m_p2Pos);
-	drawBalls();
+	drawPoints();
+	drawBrush(m_pos);
 }
 
-void Game::drawPeddelP1(glm::vec2 p1) {
+void Game::drawBrush(glm::vec2 p1) {
+	// draw actual cursor
 	auto rect = D2D1::Rect(
-		p1.x - m_paddelWidth / 2.0f,
-		p1.y - m_p1Size / 2.0f,
-		p1.x + m_paddelWidth / 2.0f,
-		p1.y + m_p1Size / 2.0f
+		p1.x - m_brushWidth / 2.0f,
+		p1.y - m_brushSize / 2.0f,
+		p1.x + m_brushWidth / 2.0f,
+		p1.y + m_brushSize / 2.0f
 	);
 
-	m_renderTarget->FillRectangle(rect, m_brushPaddel);
+	m_renderTarget->CreateSolidColorBrush(m_colors[m_currentCollor], &m_brushBall);
+	m_renderTarget->FillRectangle(rect, m_brushBall);
+
+	m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::White, 1.0f), &m_brushBall);
+	m_renderTarget->DrawRectangle(rect, m_brushBall);
 }
 
-void Game::drawPeddelP2(glm::vec2 p2) {
-	auto rect = D2D1::Rect(
-		p2.x - m_paddelWidth / 2.0f,
-		p2.y - m_p2Size / 2.0f,
-		p2.x + m_paddelWidth / 2.0f,
-		p2.y + m_p2Size / 2.0f
-	);
-
-	m_renderTarget->FillRectangle(rect, m_brushPaddel);
-}
-
-void Game::drawBalls() {
-
-	for (auto& ball : m_balls) {
+void Game::drawPoints() {
+	for (size_t i = 0; i < m_points.size(); ++i) {
 		auto circle = D2D1::Ellipse(
-			D2D1::Point2F(ball.x, ball.y),
-			m_ballSize,
-			m_ballSize
+			D2D1::Point2F(m_points[i].x, m_points[i].y),
+			m_brushSize,
+			m_brushSize
 		);
+		m_renderTarget->CreateSolidColorBrush(m_pointColors[i], &m_brushBall);
 		m_renderTarget->FillEllipse(circle, m_brushBall);
 	}
-
 }
 
-void Game::spawnBallP1() {
-	m_balls.push_back(m_p1Pos + glm::vec2(m_paddelWidth / 2 + m_ballSize + 3.0f, 0.0f));
-	m_ballDirs.push_back(glm::vec2(rand() / RAND_MAX, rand() / RAND_MAX));
+void Game::spawnPoint() {
+	m_points.push_back(m_pos);
+	m_pointColors.push_back(m_colors[m_currentCollor]);
 }
 
-void Game::spawnBallP2() {
-	m_balls.push_back(m_p2Pos + glm::vec2(m_paddelWidth / 2 + m_ballSize + 3.0f, 0.0f));
-	m_ballDirs.push_back(glm::vec2(-(rand() / RAND_MAX), rand() / RAND_MAX));
-}
-
-void Game::update(glm::vec2 p1, glm::vec2 p2, ID2D1HwndRenderTarget* renderTarget) {
-	m_p1Pos = p1;
-	m_p2Pos = p2;
+void Game::update(glm::vec2 pos, ID2D1HwndRenderTarget* renderTarget) {
+	m_pos = pos;
 
 	setRenderTarget(renderTarget);
 	m_renderTarget->BeginDraw();
 	m_renderTarget->Clear();
 
-	updateBallPositions();
+	if (m_draw)
+		spawnPoint();
 
 	draw();
 

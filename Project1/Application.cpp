@@ -83,11 +83,6 @@ int Application::Run(HINSTANCE hInstance, int nCmdShow)
     const int eventCount = 1;
     HANDLE hEvents[eventCount];
 
-    m_calibration.addCalibPoint(glm::vec2(0.0, 0.0));
-    m_calibration.addCalibPoint(glm::vec2(1920.0, 0.0));
-    m_calibration.addCalibPoint(glm::vec2(1920.0, 1080.0));
-    m_calibration.addCalibPoint(glm::vec2(0.0, 1080.0));
-
     // Main message loop
     while (WM_QUIT != msg.message)
     {
@@ -129,17 +124,42 @@ void Application::Update()
     // Wait for 0ms, just quickly test if it is time to process a skeleton
     if (WAIT_OBJECT_0 == WaitForSingleObject(m_hNextSkeletonEvent, 0))
     {
+
+        RECT rc;
+        GetWindowRect(GetDlgItem(m_hWnd, IDC_VIDEOVIEW), &rc);
+
+        int width = rc.right - rc.left;
+        int height = rc.bottom - rc.top;
+
+        std::vector<glm::vec2> points = { glm::vec2(0,0), glm::vec2(width, 0.0), glm::vec2(width, height), glm::vec2(0.0, height) };
+
         if (GetAsyncKeyState(VK_NUMPAD0) & 0x8000) {
+            std::cout << "pressed O" << std::endl;
             if (m_calibratingPoints < 4) {
                 NUI_SKELETON_FRAME skeletonFrame = { 0 };
                 HRESULT hr = m_pNuiSensor->NuiSkeletonGetNextFrame(0, &skeletonFrame);
                 if (FAILED(hr)) {
+                    std::cout << "failed getting skeletal data" << std::endl;
                     return;
                 }
-                NUI_SKELETON_DATA& skeleton = skeletonFrame.SkeletonData[0];
-                if (skeleton.eTrackingState == NUI_SKELETON_TRACKED) {
-                    m_calibration.addSkeletonPoint(skeleton.SkeletonPositions[NUI_SKELETON_POSITION_HIP_CENTER]);
-                    m_calibratingPoints++;
+
+                for (int i = 0; i < NUI_SKELETON_COUNT; i++) {
+                    NUI_SKELETON_DATA skeleton = skeletonFrame.SkeletonData[i];
+                    if (skeleton.eTrackingState == NUI_SKELETON_TRACKED) {
+                        Vector4 skeletalPoints[NUI_SKELETON_POSITION_COUNT];
+                        for (int i = 0; i < NUI_SKELETON_POSITION_COUNT; ++i)
+                        {
+                            skeletalPoints[i] = skeleton.SkeletonPositions[i];
+                        }
+                        skeletalPoints[NUI_SKELETON_POSITION_SHOULDER_LEFT];
+
+                        std::cout << "adding point" << std::endl;
+                        m_calibration.addCalibPoint(points[m_calibratingPoints]);
+                        m_calibration.addSkeletonPoint(skeleton.SkeletonPositions[NUI_SKELETON_POSITION_HIP_CENTER]);
+                        m_calibratingPoints++;
+                        Sleep(1000);
+                        break;
+                    }
                 }
             }
         } 
@@ -160,7 +180,64 @@ void Application::Update()
             m_calibration.calibrate();
             m_calibrated = true;
         }
-        if (m_calibratingPoints == 4 && m_calibrated || true) {
+
+        // render current calibration corner
+        if (m_calibratingPoints < 4) {
+            HRESULT hr = EnsureDirect2DResources();
+            if (FAILED(hr))
+            {
+                std::cout << "direct2D failed" << std::endl;
+                return;
+            }
+
+            m_pRenderTarget->BeginDraw();
+            m_pRenderTarget->Clear();
+            ID2D1SolidColorBrush* m_brushBall;
+            m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::White, 1.0f), &m_brushBall);
+
+            if (m_calibratingPoints == 0) {
+                //m_calibration.addCalibPoint(glm::vec2(0.0, 0.0));
+                auto circle = D2D1::Ellipse(
+                    D2D1::Point2F(0,0),
+                    50,
+                    50
+                );
+                m_pRenderTarget->FillEllipse(circle, m_brushBall);
+            }
+            else if (m_calibratingPoints == 1) {
+                //m_calibration.addCalibPoint(glm::vec2(1920.0, 0.0));
+                auto circle = D2D1::Ellipse(
+                    D2D1::Point2F(width, 0),
+                    50,
+                    50
+                );
+                m_pRenderTarget->FillEllipse(circle, m_brushBall);
+
+            }
+            else if (m_calibratingPoints == 2) {
+                //m_calibration.addCalibPoint(glm::vec2(1920.0, 1080.0));
+                auto circle = D2D1::Ellipse(
+                    D2D1::Point2F(width, height),
+                    50,
+                    50
+                );
+                m_pRenderTarget->FillEllipse(circle, m_brushBall);
+            }
+            else if (m_calibratingPoints == 3) {
+                //m_calibration.addCalibPoint(glm::vec2(0.0, 1080.0));
+                auto circle = D2D1::Ellipse(
+                    D2D1::Point2F(0, height),
+                    50,
+                    50
+                );
+                m_pRenderTarget->FillEllipse(circle, m_brushBall);
+            }
+
+            m_pRenderTarget->EndDraw();
+        }
+
+        // render game
+        if (m_calibratingPoints == 4 && m_calibrated) {
             // request next skeleton data
             NUI_SKELETON_FRAME skeletonFrame = { 0 };
 
@@ -185,37 +262,35 @@ void Application::Update()
             std::vector<SkeletalPoses> detectedPoses = Poses::detectPoses(skeletonFrame);
 
             // update game depending on pose
-            if (detectedPoses[0] == SkeletalPoses::UNKNOWN) {
-                std::cout << "unknown" << std::endl;
-            }
-            else if (detectedPoses[0] == SkeletalPoses::T_POSE) {
-                game.spawnBallP1();
-                std::cout << "Tpose" << std::endl;
-            }
-            else if (detectedPoses[0] == SkeletalPoses::ARMS_DOWN) {
-                game.shrinkPeddelP1();
-                std::cout << "arms down" << std::endl;
+            if (detectedPoses[0] == SkeletalPoses::T_POSE) {
+                game.toggleDraw();
+                Sleep(1000);
             }
             else if (detectedPoses[0] == SkeletalPoses::ARMS_UP) {
-                game.enlargePeddelP1();
-                std::cout << "arms up" << std::endl;
+                game.nextColor();
+                Sleep(1000);
             }
 
-            if (detectedPoses[1] == SkeletalPoses::UNKNOWN) {
-                 
-            }
-            else if (detectedPoses[1] == SkeletalPoses::T_POSE) {
-                game.spawnBallP2();
-            }
-            else if (detectedPoses[1] == SkeletalPoses::ARMS_DOWN) {
-                game.shrinkPeddelP2();
-            }
-            else if (detectedPoses[1] == SkeletalPoses::ARMS_UP) {
-                game.enlargePeddelP2();
+            for (int i = 0; i < NUI_SKELETON_COUNT; i++) {
+                if (NUI_SKELETON_TRACKED == skeletonFrame.SkeletonData[i].eTrackingState) {
+                    Vector4 skeletalPoints[NUI_SKELETON_POSITION_COUNT];
+                    for (int j = 0; j < NUI_SKELETON_POSITION_COUNT; ++j)
+                    {
+                        skeletalPoints[j] = skeletonFrame.SkeletonData[i].SkeletonPositions[j];
+                    }
+
+                    if (skeletonFrame.SkeletonData[i].eSkeletonPositionTrackingState[NUI_SKELETON_POSITION_HIP_CENTER] != NUI_SKELETON_POSITION_NOT_TRACKED) {
+                        
+                            m_p1Pos = m_calibration.kinectToProjectionPoint(skeletalPoints[NUI_SKELETON_POSITION_HIP_CENTER]);
+
+                            break;
+                    }
+                }
             }
 
             // render game
-            game.update(m_p1Pos, m_p2Pos, m_pRenderTarget);
+            // offset for drawing in front of you
+            game.update(m_p1Pos - glm::vec2(0.0, 30.0f), m_pRenderTarget);
             //ProcessSkeleton(skeletonFrame); // draw skeleton from kinect
         }
     }
@@ -302,6 +377,8 @@ HRESULT Application::CreateFirstConnected()
         if (S_OK == hr)
         {
             m_pNuiSensor = pNuiSensor;
+
+
             break;
         }
 

@@ -4,6 +4,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
 #include "PartialCalibration.h"
+#include <iostream>
 
 PartialCalibration::PartialCalibration(){}
 
@@ -77,14 +78,14 @@ glm::vec2 PartialCalibration::kinectToProjectionPoint(Vector4 point)
     NUI_DEPTH_IMAGE_POINT depthpt;
     m_sensor->NuiGetCoordinateMapper(&mapper); 
     mapper->MapSkeletonPointToDepthPoint(&point, NUI_IMAGE_RESOLUTION::NUI_IMAGE_RESOLUTION_640x480, &depthpt);
-
+       
     glm::vec3 p = glm::vec3(depthpt.x, depthpt.y, depthpt.depth);
 
     glm::vec3 pOnGroundPlane = m_groundPlaneTransform * p;
 
-    std::vector<float> testPoint = {(float)pOnGroundPlane.x, (float)pOnGroundPlane.y};
-    std::vector<float> out = {0.0f, 0.0f};
+    std::vector<cv::Point2f> testPoint = { cv::Point2f(pOnGroundPlane.x, pOnGroundPlane.y) };
+    std::vector<cv::Point2f> out;
     cv::perspectiveTransform(testPoint, out, m_transform);
 
-    return glm::vec2(out[0], out[1]);
+    return glm::vec2(out[0].x, out[0].y);
 }
