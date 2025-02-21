@@ -1,13 +1,11 @@
 #include "Game.h"
 
 Game::~Game() {
-	m_brushPaddel->Release();
 	m_brushBall->Release();
 }
 
 void Game::setRenderTarget(ID2D1HwndRenderTarget* renderTarget) {
 	m_renderTarget = renderTarget;
-	m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::White, 1.0f), &m_brushPaddel);
 	m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Green, 1.0f), &m_brushBall);
 }
 
@@ -42,20 +40,21 @@ void Game::drawBrush(glm::vec2 p1) {
 }
 
 void Game::drawPoints() {
-	for (size_t i = 0; i < m_points.size(); ++i) {
-		auto circle = D2D1::Ellipse(
-			D2D1::Point2F(m_points[i].x, m_points[i].y),
-			m_brushSize,
-			m_brushSize
-		);
-		m_renderTarget->CreateSolidColorBrush(m_pointColors[i], &m_brushBall);
-		m_renderTarget->FillEllipse(circle, m_brushBall);
+	for (size_t i = 0; i < m_ellipses.size(); ++i) {
+		m_renderTarget->FillEllipse(m_ellipses[i], m_brushes[i]);
 	}
 }
 
 void Game::spawnPoint() {
-	m_points.push_back(m_pos);
-	m_pointColors.push_back(m_colors[m_currentCollor]);
+	auto circle = D2D1::Ellipse(
+		D2D1::Point2F(m_pos.x, m_pos.y),
+		m_brushSize,
+		m_brushSize
+	);
+	m_ellipses.push_back(circle);
+	ID2D1SolidColorBrush* brush;
+	m_renderTarget->CreateSolidColorBrush(m_colors[m_currentCollor], &brush);
+	m_brushes.push_back(brush);
 }
 
 void Game::update(glm::vec2 pos, ID2D1HwndRenderTarget* renderTarget) {
@@ -64,6 +63,12 @@ void Game::update(glm::vec2 pos, ID2D1HwndRenderTarget* renderTarget) {
 	setRenderTarget(renderTarget);
 	m_renderTarget->BeginDraw();
 	m_renderTarget->Clear();
+
+	ID2D1SolidColorBrush* brush;
+	m_renderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::LightBlue, 1.0f), &brush);
+	auto rc = D2D1::Rect(0,0, m_windowWidth, m_windowHeight);
+
+	m_renderTarget->FillRectangle(rc, brush); // Paint background manually
 
 	if (m_draw)
 		spawnPoint();

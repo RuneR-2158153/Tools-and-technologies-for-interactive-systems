@@ -24,6 +24,8 @@ public:
     LRESULT CALLBACK        DlgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
     int                     Run(HINSTANCE hInstance, int nCmdShow);
 
+    std::chrono::steady_clock::time_point beginTime = std::chrono::steady_clock::now();
+
 private:
     bool m_calibrated = false;
     short m_calibratingPoints = 0;

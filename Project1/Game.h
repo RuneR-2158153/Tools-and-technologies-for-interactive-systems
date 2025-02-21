@@ -28,9 +28,10 @@ private:
 	
 	std::vector<glm::vec2> m_points;
 	std::vector<D2D1::ColorF> m_pointColors;
+	std::vector<ID2D1SolidColorBrush*> m_brushes;
+	std::vector<D2D1_ELLIPSE> m_ellipses;
 
 	ID2D1HwndRenderTarget* m_renderTarget;
-	ID2D1SolidColorBrush* m_brushPaddel;
 	ID2D1SolidColorBrush* m_brushBall;
 	
 	void spawnPoint();

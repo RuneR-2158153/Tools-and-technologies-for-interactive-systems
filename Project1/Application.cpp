@@ -262,13 +262,13 @@ void Application::Update()
             std::vector<SkeletalPoses> detectedPoses = Poses::detectPoses(skeletonFrame);
 
             // update game depending on pose
-            if (detectedPoses[0] == SkeletalPoses::T_POSE) {
+            if (detectedPoses[0] == SkeletalPoses::T_POSE && std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - beginTime).count() > 1000) {
                 game.toggleDraw();
-                Sleep(1000);
+                beginTime = std::chrono::steady_clock::now();
             }
-            else if (detectedPoses[0] == SkeletalPoses::ARMS_UP) {
+            else if (detectedPoses[0] == SkeletalPoses::ARMS_UP && std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - beginTime).count() > 1000) {
                 game.nextColor();
-                Sleep(1000);
+                beginTime = std::chrono::steady_clock::now();
             }
 
             for (int i = 0; i < NUI_SKELETON_COUNT; i++) {
@@ -290,7 +290,7 @@ void Application::Update()
 
             // render game
             // offset for drawing in front of you
-            game.update(m_p1Pos - glm::vec2(0.0, 30.0f), m_pRenderTarget);
+            game.update(m_p1Pos - glm::vec2(0.0, 200.0f), m_pRenderTarget);
             //ProcessSkeleton(skeletonFrame); // draw skeleton from kinect
         }
     }
@@ -333,7 +333,6 @@ LRESULT CALLBACK Application::DlgProc(HWND hWnd, UINT message, WPARAM wParam, LP
             CreateFirstConnected();
         }
         break;
-
         // If the titlebar X is clicked, destroy app
     case WM_CLOSE:
         DestroyWindow(hWnd);
@@ -464,11 +463,11 @@ void Application::ProcessSkeleton(NUI_SKELETON_FRAME skeletonFrame)
 
     // Device lost, need to recreate the render target
     // We'll dispose it now and retry drawing
-    if (D2DERR_RECREATE_TARGET == hr)
-    {
-        hr = S_OK;
-        DiscardDirect2DResources();
-    }
+    //if (D2DERR_RECREATE_TARGET == hr)
+    //{
+    //    hr = S_OK;
+    //    DiscardDirect2DResources();
+    //}
 }
 
 void Application::DrawSkeleton(const NUI_SKELETON_DATA & skel, int windowWidth, int windowHeight)
